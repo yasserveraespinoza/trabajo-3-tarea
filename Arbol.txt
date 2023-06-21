@@ -1,0 +1,40 @@
+class Arbol {
+    protected String especie;
+    protected int altura;
+
+    public Arbol(String especie, int altura) {
+        this.especie = especie;
+        this.altura = altura;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Especie: " + especie);
+        System.out.println("Altura: " + altura + " metros");
+    }
+}
+
+// Clase derivada (subclase)
+class ArbolFrutal extends Arbol {
+    private String fruta;
+
+    public ArbolFrutal(String especie, int altura, String fruta) {
+        super(especie, altura);
+        this.fruta = fruta;
+    }
+
+    public void mostrarFruta() {
+        System.out.println("Fruta: " + fruta);
+    }
+}
+
+// Clase principal
+public class Main {
+    public static void main(String[] args) {
+        Arbol arbol = new Arbol("Pino", 10);
+        arbol.mostrarInformacion();
+
+        ArbolFrutal arbolFrutal = new ArbolFrutal("Manzano", 5, "Manzana");
+        arbolFrutal.mostrarInformacion();
+        arbolFrutal.mostrarFruta();
+    }
+}

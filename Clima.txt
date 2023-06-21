@@ -1,0 +1,41 @@
+
+class Clima {
+    protected String ciudad;
+    protected double temperatura;
+
+    public Clima(String ciudad, double temperatura) {
+        this.ciudad = ciudad;
+        this.temperatura = temperatura;
+    }
+
+    public void mostrarClima() {
+        System.out.println("Clima en " + ciudad + ":");
+        System.out.println("Temperatura: " + temperatura + "°C");
+    }
+}
+
+// Clase derivada (subclase)
+class ClimaExtendido extends Clima {
+    private int humedad;
+
+    public ClimaExtendido(String ciudad, double temperatura, int humedad) {
+        super(ciudad, temperatura);
+        this.humedad = humedad;
+    }
+
+    public void mostrarClimaExtendido() {
+        mostrarClima();
+        System.out.println("Humedad: " + humedad + "%");
+    }
+}
+
+// Clase principal
+public class Main {
+    public static void main(String[] args) {
+        Clima clima = new Clima("Ciudad A", 25.5);
+        clima.mostrarClima();
+
+        ClimaExtendido climaExtendido = new ClimaExtendido("Ciudad B", 20.3, 75);
+        climaExtendido.mostrarClimaExtendido();
+    }
+}

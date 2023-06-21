@@ -1,0 +1,14 @@
+package mediocurso2;
+
+
+public class Main {
+    public static void main(String args[]) {
+        Rol rol = new Rol();
+        rol.agregarPermisoRol(new PermisoRol(new Rol("Rol Usuario"), new Permiso("Agregar")));
+        rol.agregarPermisoRol(new PermisoRol(new Rol("Rol Usuario"), new Permiso("Editar")));
+        rol.agregarPermisoRol(new PermisoRol(new Rol("Rol Usuario"), new Permiso("Eliminar")));
+
+        rol.ordenar();
+        rol.listarPermisoRol();
+    }
+}

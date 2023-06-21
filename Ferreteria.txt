@@ -1,0 +1,40 @@
+class Producto {
+    protected String nombre;
+    protected double precio;
+
+    public Producto(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Precio: $" + precio);
+    }
+}
+
+// Clase derivada (subclase)
+class Ferreteria extends Producto {
+    private String categoria;
+
+    public Ferreteria(String nombre, double precio, String categoria) {
+        super(nombre, precio);
+        this.categoria = categoria;
+    }
+
+    public void mostrarCategoria() {
+        System.out.println("Categoría: " + categoria);
+    }
+}
+
+// Clase principal
+public class Main {
+    public static void main(String[] args) {
+        Producto producto = new Producto("Martillo", 10.99);
+        producto.mostrarInformacion();
+
+        Ferreteria herramienta = new Ferreteria("Destornillador", 5.99, "Herramientas");
+        herramienta.mostrarInformacion();
+        herramienta.mostrarCategoria();
+    }
+}
